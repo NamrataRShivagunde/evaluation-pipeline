@@ -6,8 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 
-dev_requires = (["black<=21.12b0", "coverage<=6.2", "mock>=4.0.3", "pytest",
-                 "promptsource@git+https://github.com/bigscience-workshop/promptsource@eval-hackathon"],)
+dev_requires = (["black<=21.12b0", "coverage<=6.2", "mock>=4.0.3", "pytest"],)
 colab_requires = (["black<=21.12b0", "coverage<=6.2", "mock>=4.0.3", "pytest"])
 install_requires = [
     "datasets>=2.0.0",

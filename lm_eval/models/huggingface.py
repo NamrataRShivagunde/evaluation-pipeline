@@ -151,7 +151,7 @@ class HuggingFaceAutoLM(TokenLM):
         self._config = self.AUTO_CONFIG_CLASS.from_pretrained(
             pretrained,
             revision=revision + ("/" + subfolder if subfolder is not None else ""),
-            trust_remote_code=trust_remote_code,
+            #trust_remote_code=trust_remote_code,
         )
 
         self._add_special_tokens = add_special_tokens
@@ -177,7 +177,7 @@ class HuggingFaceAutoLM(TokenLM):
             revision=revision,
             subfolder=subfolder,
             torch_dtype=_get_dtype(dtype, self._config),
-            trust_remote_code=trust_remote_code,
+            #trust_remote_code=trust_remote_code,
             **accelerate_kwargs,
         )
         self.model.eval()
@@ -212,7 +212,7 @@ class HuggingFaceAutoLM(TokenLM):
             max_memory=max_memory,
             offload_folder=offload_folder,
             torch_dtype=torch_dtype,
-            trust_remote_code=trust_remote_code,
+            #trust_remote_code=trust_remote_code,
         )
         return model
 
@@ -231,7 +231,7 @@ class HuggingFaceAutoLM(TokenLM):
             pretrained if tokenizer is None else tokenizer,
             revision=revision + ("/" + subfolder if subfolder is not None else ""),
             use_fast=use_fast,
-            trust_remote_code=trust_remote_code,
+            #trust_remote_code=trust_remote_code,
         )
         if not tokenizer.eos_token:
             tokenizer.add_special_tokens({"eos_token": "</s>"})

@@ -160,7 +160,7 @@ class HuggingFaceAutoLM(TokenLM):
             revision=revision,
             subfolder=subfolder,
             tokenizer=tokenizer,
-            trust_remote_code=trust_remote_code,
+            #trust_remote_code=trust_remote_code,
         )
         self.tokenizer.model_max_length = self.max_length
 
@@ -224,7 +224,7 @@ class HuggingFaceAutoLM(TokenLM):
         subfolder: str,
         tokenizer: Optional[str] = None,
         use_fast: Optional[bool] = True,
-        trust_remote_code: Optional[bool] = False,
+        # trust_remote_code: Optional[bool] = False,
     ) -> transformers.PreTrainedTokenizer:
         """Returns a pre-trained tokenizer from a pre-trained tokenizer configuration."""
         tokenizer = self.AUTO_TOKENIZER_CLASS.from_pretrained(
